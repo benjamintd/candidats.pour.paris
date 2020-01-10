@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Meta from "../components/Meta";
 import Header from "../components/Header";
 import Explainer from "../components/Explainer";
-import Table, { ITableProps } from "../components/Table";
+import Table from "../components/Table";
 import fetch from "isomorphic-unfetch";
 
 interface IProps {
@@ -53,9 +53,7 @@ const App = (props: IProps) => {
 };
 
 App.getInitialProps = async ctx => {
-  const res = await fetch(
-    "https://script.google.com/macros/s/AKfycbzGvKKUIaqsMuCj7-A2YRhR-f7GZjl4kSxSN1YyLkS01_CfiyE/exec?id=12bldIbAg95LyJ27keQ0w34lkFrsDnsYQpYb_GVSQgZ8&sheet=Propositions&header=1&startRow=3&Valid%C3%A9=true"
-  );
+  const res = await fetch("https://candidats.pour.paris/api/data");
   const data = await res.json();
   return data;
 };
