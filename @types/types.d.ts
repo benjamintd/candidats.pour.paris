@@ -22,3 +22,5 @@ interface IProposition {
   text: string;
   source: string;
 }
+
+type IFilter = "candidate" | "type";

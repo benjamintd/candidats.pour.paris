@@ -2,7 +2,9 @@ import React, { useState, useEffect } from "react";
 import Meta from "../components/Meta";
 import Header from "../components/Header";
 import Explainer from "../components/Explainer";
-import Table from "../components/Table";
+import Filter from "../components/Filter";
+import TableByCandidate from "../components/TableByCandidate";
+import TableByType from "../components/TableByType";
 import fetch from "isomorphic-unfetch";
 
 interface IProps {
@@ -15,31 +17,51 @@ interface IProps {
 }
 
 const App = (props: IProps) => {
-  const [
-    proposalsByCandidateAndType,
-    setProposalsByCandidateAndType
-  ] = useState({});
+  const [proposalsByCandidate, setProposalsByCandidate] = useState({});
 
-  useEffect(() => {
-    const r = {};
-    props.records.forEach(rec => {
-      if (!r[rec.Candidat]) r[rec.Candidat] = {};
-      if (!r[rec.Candidat][rec.Type]) r[rec.Candidat][rec.Type] = [];
-      r[rec.Candidat][rec.Type].push({
-        text: rec.Proposition,
-        source: rec.Source
+  const [proposalsByType, setProposalsByType] = useState({});
+
+  const [filter, setFilter] = useState("candidate" as IFilter);
+
+  useEffect(
+    () => {
+      const pbc = {};
+      const pbt = {};
+      props.records.forEach(rec => {
+        // create the candidate * type if it does not exist
+        if (!pbc[rec.Candidat]) pbc[rec.Candidat] = {};
+        if (!pbc[rec.Candidat][rec.Type]) pbc[rec.Candidat][rec.Type] = [];
+        // create the type * candidate if it does not exist
+        if (!pbt[rec.Type]) pbt[rec.Type] = {};
+        if (!pbt[rec.Type][rec.Candidat]) pbt[rec.Type][rec.Candidat] = [];
+
+        const prop = {
+          text: rec.Proposition,
+          source: rec.Source
+        };
+        // fill the hashes
+        pbc[rec.Candidat][rec.Type].push(prop);
+        pbt[rec.Type][rec.Candidat].push(prop);
       });
-    });
 
-    setProposalsByCandidateAndType(r);
-  }, [props]);
+      setProposalsByCandidate(pbc);
+      setProposalsByType(pbt);
+    },
+    // the proposals are updated depending on the spreadsheet query results
+    [props]
+  );
 
   return (
     <div>
       <Meta />
       <Header />
       <Explainer />
-      <Table proposalsByCandidateAndType={proposalsByCandidateAndType} />
+      <Filter filter={filter} setFilter={setFilter} />
+      {filter === "candidate" ? (
+        <TableByCandidate proposalsByCandidate={proposalsByCandidate} />
+      ) : (
+        <TableByType proposalsByType={proposalsByType} />
+      )}
       <style jsx global>{`
         body {
           margin: 0;
