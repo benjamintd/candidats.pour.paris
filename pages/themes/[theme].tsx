@@ -1,13 +1,15 @@
 import React from "react";
 import { useRouter } from "next/router";
 import fetch from "isomorphic-unfetch";
+import Link from "next/link";
 
 import Header from "../../components/Header";
 import Explainer from "../../components/Explainer";
 import Filter from "../../components/Filter";
 import TableByTheme from "../../components/TableByType";
 import useProposals from "../../hooks/useProposals";
-import Link from "next/link";
+import ContentContainer from "../../components/ContentContainer";
+import Defilter from "../../components/Defilter";
 
 const Themes = (props: ISheetData) => {
   const [proposalsByCandidate, proposalsByType] = useProposals(props);
@@ -18,16 +20,10 @@ const Themes = (props: ISheetData) => {
     <>
       <Header />
       <Explainer />
-      <div className="mw8 center">
+      <ContentContainer>
         <div className="flex justify-between w-100">
           <Filter filter={"type"} />
-          <Link href="/themes">
-            <div className="pa3 mb2 dark-gray pointer">
-              <span className="pa2 br3 ba b--dark-gray">
-                afficher tous les thèmes
-              </span>
-            </div>
-          </Link>
+          <Defilter href="/themes">afficher tous les thèmes</Defilter>
         </div>
         {proposalsByType[theme] && (
           <TableByTheme
@@ -36,7 +32,7 @@ const Themes = (props: ISheetData) => {
             }}
           />
         )}
-      </div>
+      </ContentContainer>
     </>
   );
 };

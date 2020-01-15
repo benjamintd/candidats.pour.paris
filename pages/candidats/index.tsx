@@ -5,6 +5,7 @@ import Filter from "../../components/Filter";
 import TableByCandidate from "../../components/TableByCandidate";
 import useProposals from "../../hooks/useProposals";
 import fetch from "isomorphic-unfetch";
+import ContentContainer from "../../components/ContentContainer";
 
 const Candidates = (props: ISheetData) => {
   const [proposalsByCandidate, proposalsByType] = useProposals(props);
@@ -13,10 +14,10 @@ const Candidates = (props: ISheetData) => {
     <>
       <Header />
       <Explainer />
-      <div className="mw8 center">
+      <ContentContainer>
         <Filter filter={"candidate"} />
         <TableByCandidate proposalsByCandidate={proposalsByCandidate} />
-      </div>
+      </ContentContainer>
     </>
   );
 };
