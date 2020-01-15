@@ -1,6 +1,8 @@
 import React from "react";
+import Link from "next/link";
 
 import ListItem from "./ListItem";
+import candidatesInfo from "./candidatesInfo";
 
 interface IProps {
   proposals: {
@@ -11,22 +13,44 @@ interface IProps {
 
 export default ({ proposals, type }: IProps) => {
   return (
-    <div className="br3 pa3 bg-light-gray mb4 mw8 center shadow-3">
-      <h1 className="f3 tc">{type}</h1>
-      {Object.keys(proposals)
-        .sort((a, b) => a.localeCompare(b))
-        .map(candidate => {
-          return (
-            <div key={candidate} className="flex-l flex-column-m pb2">
-              <div className="w-25-l w-100-m mv2 f4">{candidate}</div>
-              <ul className="mv2 w-75-l w-100-m lh-copy">
-                {proposals[candidate].map(proposal => (
-                  <ListItem source={proposal.source}>{proposal.text}</ListItem>
-                ))}
-              </ul>
-            </div>
-          );
-        })}
+    <div className="br3 bg-light-gray mb4 center shadow-3">
+      <div className="bg-dark-blue pa2 f5 fw3 white tc br3 br--top">
+        <Link href="/themes/[theme]" as={"/themes/" + encodeURI(type)}>
+          <h1 className="pointer link underline-hover">{type}</h1>
+        </Link>
+      </div>
+      <div className="pa3">
+        {Object.keys(proposals)
+          .sort((a, b) => a.localeCompare(b))
+          .map(candidate => {
+            return (
+              <div key={candidate} className="flex-l flex-column-m pb2">
+                <div className="w-25-l w-100-m">
+                  <Link
+                    href="/candidats/[candidat]"
+                    as={"/candidats/" + encodeURI(candidate)}
+                  >
+                    <a className="mv2 f4 black link underline-hover">
+                      {candidate}
+                    </a>
+                  </Link>
+                </div>
+                <ul className="mv2 w-75-l w-100-m lh-copy">
+                  {proposals[candidate].map((proposal, i) => (
+                    <ListItem key={i} source={proposal.source}>
+                      {proposal.text}
+                    </ListItem>
+                  ))}
+                </ul>
+              </div>
+            );
+          })}
+      </div>
+      <style jsx>{`
+        h1 {
+          font-family: "Bree Serif", serif;
+        }
+      `}</style>
     </div>
   );
 };
