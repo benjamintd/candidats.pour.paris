@@ -39,3 +39,20 @@ interface ICandidateInfo {
   website: string;
   color: string;
 }
+
+interface IRecord {
+  Proposition: string;
+  Candidat: ICandidat;
+  Type: IPropositionType;
+  Source: string;
+}
+
+interface ISheetData {
+  records: Array<IRecord>;
+}
+
+type IPropsHash = {
+  [lvlOne: string]: {
+    [lvlTwo: string]: IProposition[];
+  };
+};

@@ -8,5 +8,10 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   const sheetData = await sheetRes.json();
 
   res.setHeader("Cache-Control", "s-maxage=3600");
-  res.status(200).json(sheetData);
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  res.status(200).json(sheetData as ISheetData);
 };

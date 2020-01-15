@@ -1,33 +1,30 @@
 import React from "react";
+import Link from "next/link";
 
-export default ({
-  filter,
-  setFilter
-}: {
-  filter: IFilter;
-  setFilter: (f: IFilter) => void;
-}) => {
+export default ({ filter }: { filter: IFilter }) => {
   return (
-    <div className="pa3 br3 mb2 mw8 center dark-gray">
+    <div className="pa3 mb2 dark-gray">
       Afficher par{" "}
-      <span
-        className={
-          "br3 pv1 ph2 shadow-3 pointer" +
-          (filter === "candidate" ? " fw9 highlight" : "")
-        }
-        onClick={() => setFilter("candidate")}
-      >
-        candidat
-      </span>{" "}
-      <span
-        className={
-          "br3 pv1 ph2 shadow-3 pointer" +
-          (filter === "type" ? " fw9 highlight" : "")
-        }
-        onClick={() => setFilter("type")}
-      >
-        thème
-      </span>
+      <Link href="/candidats">
+        <span
+          className={
+            "br3 pv1 ph2 shadow-3 pointer dim" +
+            (filter === "candidate" ? " fw9 highlight" : "")
+          }
+        >
+          candidats
+        </span>
+      </Link>{" "}
+      <Link href="/themes">
+        <span
+          className={
+            "br3 pv1 ph2 shadow-3 pointer dim" +
+            (filter === "type" ? " fw9 highlight" : "")
+          }
+        >
+          thèmes
+        </span>
+      </Link>
       <style jsx>{`
         .highlight {
           background-color: var(--light-yellow);
