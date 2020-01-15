@@ -68,6 +68,11 @@ const App = (props: IProps) => {
           font-family: "Fira Sans", -apple-system, BlinkMacSystemFont,
             "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue",
             sans-serif;
+          --light-yellow: #ffeeaa;
+        }
+
+        .bg-light-yellow {
+          background-color: var(--light-yellow);
         }
       `}</style>
     </div>

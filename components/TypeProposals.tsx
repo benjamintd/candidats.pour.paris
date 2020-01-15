@@ -19,7 +19,7 @@ export default ({ proposals, type }: IProps) => {
           return (
             <div key={candidate} className="flex-l flex-column-m pb2">
               <div className="w-25-l w-100-m mv2 f4">{candidate}</div>
-              <ul className="mv2 lh-copy">
+              <ul className="mv2 w-75-l w-100-m lh-copy">
                 {proposals[candidate].map(proposal => (
                   <ListItem source={proposal.source}>{proposal.text}</ListItem>
                 ))}

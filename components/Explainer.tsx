@@ -20,7 +20,7 @@ export default () => (
 
     <style jsx>{`
       strong {
-        background-color: #ffeeaa;
+        background-color: var(--light-yellow);
         padding: 3px;
       }
     `}</style>

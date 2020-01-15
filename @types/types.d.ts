@@ -5,7 +5,9 @@ type ICandidat =
   | "Cédric Villani"
   | "Benjamin Griveaux"
   | "Rachida Dati"
-  | "Serge Federbusch";
+  | "Serge Federbusch"
+  | "Marcel Campion"
+  | "Pierre-Yves Bournazel";
 
 type IPropositionType =
   | "Transports"
@@ -24,3 +26,16 @@ interface IProposition {
 }
 
 type IFilter = "candidate" | "type";
+
+type ICandidatesInfo = {
+  [candidate in ICandidat]: ICandidateInfo;
+};
+
+interface ICandidateInfo {
+  image: string;
+  bio: string;
+  movement: string;
+  party: string;
+  website: string;
+  color: string;
+}

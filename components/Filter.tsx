@@ -30,7 +30,7 @@ export default ({
       </span>
       <style jsx>{`
         .highlight {
-          background-color: #ffeeaa;
+          background-color: var(--light-yellow);
         }
       `}</style>
     </div>
