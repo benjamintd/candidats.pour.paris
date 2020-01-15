@@ -18,7 +18,7 @@ export default ({ proposalsByCandidate }: ITableProps) => {
           <CandidateProposals
             key={candidate}
             proposals={proposalsByCandidate[candidate]}
-            candidate={candidate}
+            candidate={candidate as ICandidat}
           />
         ))}
     </div>
