@@ -1,5 +1,4 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
-import Meta from "../components/Meta";
 
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
@@ -9,22 +8,14 @@ class MyDocument extends Document {
 
   render() {
     return (
+      // accessibility lang to make lighthouse happy
+      // this is the only reason we need a custom document
       <Html lang="FR-fr">
         <Head />
-        <Meta />
         <body>
           <Main />
           <NextScript />
         </body>
-        <style jsx global>{`
-          body {
-            margin: 0;
-            font-family: "Fira Sans", -apple-system, BlinkMacSystemFont,
-              "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell,
-              "Helvetica Neue", sans-serif;
-            --light-yellow: #ffeeaa;
-          }
-        `}</style>
       </Html>
     );
   }

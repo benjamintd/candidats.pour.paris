@@ -22,10 +22,6 @@ export default () => {
         content="Toutes les propositions concrètes et sourcées des candidats à la mairie de Paris"
       />
       <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/tachyons/4.11.1/tachyons.min.css"
-      />
-      <link
         href="https://fonts.googleapis.com/css?family=Bree+Serif|Fira+Sans:300,400&display=swap"
         rel="stylesheet"
       />
