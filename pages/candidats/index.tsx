@@ -1,23 +1,19 @@
 import React from "react";
-import Header from "../../components/Header";
+import fetch from "isomorphic-unfetch";
+
 import Explainer from "../../components/Explainer";
 import Filter from "../../components/Filter";
 import TableByCandidate from "../../components/TableByCandidate";
 import useProposals from "../../hooks/useProposals";
-import fetch from "isomorphic-unfetch";
-import ContentContainer from "../../components/ContentContainer";
 
 const Candidates = (props: ISheetData) => {
   const [proposalsByCandidate, proposalsByType] = useProposals(props);
 
   return (
     <>
-      <Header />
       <Explainer />
-      <ContentContainer>
-        <Filter filter={"candidate"} />
-        <TableByCandidate proposalsByCandidate={proposalsByCandidate} />
-      </ContentContainer>
+      <Filter filter={"candidate"} />
+      <TableByCandidate proposalsByCandidate={proposalsByCandidate} />
     </>
   );
 };
