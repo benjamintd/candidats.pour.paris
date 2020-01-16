@@ -9,11 +9,14 @@
     "start": "next start"
   },
   "dependencies": {
+    "@rehooks/local-storage": "^2.1.1",
     "isomorphic-unfetch": "^3.0.0",
-    "next": "^9.1.7",
+    "next": "^9.2.0",
+    "next-ga": "^2.3.4",
     "polished": "^3.4.2",
     "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "react-dom": "^16.12.0",
+    "tachyons": "^4.11.1"
   },
   "devDependencies": {
     "@types/node": "^13.1.4",
