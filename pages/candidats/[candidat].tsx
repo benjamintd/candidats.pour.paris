@@ -32,7 +32,7 @@ const Candidates = (props: ISheetData) => {
 };
 
 Candidates.getInitialProps = async ctx => {
-  const res = await fetch("https://candidats.pour.paris/api/data");
+  const res = await fetch("https://candidats.pour.paris/api/propositions");
   const data = await res.json();
   return data;
 };

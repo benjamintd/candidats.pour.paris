@@ -37,8 +37,7 @@ export default class Trends extends React.Component {
             { keyword: "/m/03hn76f", geo: "FR-J", time: "today 1-m" },
             { keyword: "/g/11dxf0gtll", geo: "FR-J", time: "today 1-m" },
             { keyword: "/m/0bwhj37", geo: "FR-J", time: "today 1-m" },
-            { keyword: "/m/02r53f9", geo: "FR-J", time: "today 1-m" },
-            { keyword: "/g/11bw1h69w4", geo: "FR-J", time: "today 1-m" }
+            { keyword: "/m/02r53f9", geo: "FR-J", time: "today 1-m" }
           ],
           category: 0,
           property: ""

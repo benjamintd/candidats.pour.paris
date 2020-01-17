@@ -10,7 +10,9 @@
   },
   "dependencies": {
     "@rehooks/local-storage": "^2.1.1",
+    "d3": "^5.15.0",
     "isomorphic-unfetch": "^3.0.0",
+    "lodash": "^4.17.15",
     "next": "^9.2.0",
     "next-ga": "^2.3.4",
     "polished": "^3.4.2",
