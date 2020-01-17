@@ -8,7 +8,10 @@ export default ({ data }: { data: IHypermind }) => {
       <div className="w-100 pa3 bb b--light-gray flex space-between">
         <span>Évolution des probabilités de gagner de chaque candidat</span>
         <span className="ml-auto pl3">
-          <a className="blue link underline-hover" href="predict.hypermind.com">
+          <a
+            className="blue link underline-hover"
+            href="https://predict.hypermind.com"
+          >
             Hypermind
           </a>
         </span>
