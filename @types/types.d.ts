@@ -56,3 +56,17 @@ type IPropsHash = {
     [lvlTwo: string]: IProposition[];
   };
 };
+
+type IHypermind = Array<{
+  id: number;
+  props: {
+    color: string;
+    title: ICandidat;
+  };
+  trades: Array<ITrade>;
+}>;
+
+interface ITrade {
+  ts: number;
+  price: number;
+}

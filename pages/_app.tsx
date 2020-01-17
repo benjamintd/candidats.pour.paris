@@ -8,14 +8,21 @@ const CookieConsent = dynamic(() => import("../components/CookieConsent"), {
 });
 import "../styles/main.css";
 import "tachyons/css/tachyons.css";
+import Header from "../components/Header";
+import ContentContainer from "../components/ContentContainer";
+import Footer from "../components/Footer";
 
 function MyApp({ Component, pageProps }) {
   return (
-    <>
+    <div className="min-vh-100 flex flex-column">
       <Meta />
-      <Component {...pageProps} />
+      <Header />
+      <ContentContainer>
+        <Component {...pageProps} />
+      </ContentContainer>
+      <Footer />
       <CookieConsent />
-    </>
+    </div>
   );
 }
 
