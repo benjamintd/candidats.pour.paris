@@ -70,6 +70,14 @@ const candidatesInfo: ICandidatesInfo = {
     website: "https://bournazel2020.fr/",
     bio: "",
     color: "#007881"
+  },
+  "Gaspard Gantzer": {
+    image: "/gaspard-gantzer.jpg",
+    movement: "Parisiennes, Parisiens",
+    party: "Parti Socialiste",
+    website: "https://www.parisiennes-parisiens.fr",
+    bio: "",
+    color: "#4800a6"
   }
 };
 
