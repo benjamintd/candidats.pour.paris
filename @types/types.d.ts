@@ -7,7 +7,8 @@ type ICandidat =
   | "Rachida Dati"
   | "Serge Federbusch"
   | "Marcel Campion"
-  | "Pierre-Yves Bournazel";
+  | "Pierre-Yves Bournazel"
+  | "Gaspard Gantzer";
 
 type IPropositionType =
   | "Transports"
