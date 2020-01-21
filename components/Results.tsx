@@ -21,7 +21,7 @@ export default ({ results }: { results: ICandidat[][] }) => {
   const winner = Object.keys(tally).sort((a, b) => tally[b] - tally[a])[0];
 
   return (
-    <div className="w-100 flex flex-column justify-center">
+    <div className="w-100 pa4 flex flex-column justify-center">
       <div className="pv3 lh-copy tc">
         <p className="f3">
           La personne qui correspond le plus à vos convictions est{" "}
@@ -84,13 +84,14 @@ export default ({ results }: { results: ICandidat[][] }) => {
         </FacebookShareButton>
         <TwitterShareButton
           url={"https://candidats.pour.paris/quiz"}
-          title={`D'après ce site je voterais pour ${winner}`}
+          title={`D'après ce site je voterais pour ${winner} aux #municipales2020`}
         >
           <TwitterIcon size={28} />
         </TwitterShareButton>
         <WhatsappShareButton
           url={"https://candidats.pour.paris/quiz"}
-          title={`D'après ce site je voterais pour ${winner}`}
+          title={`D'après ce site je voterais pour ${winner} aux municipales de Paris`}
+          separator=" "
         >
           <WhatsappIcon size={28} />
         </WhatsappShareButton>

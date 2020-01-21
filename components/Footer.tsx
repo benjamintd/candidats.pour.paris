@@ -6,7 +6,9 @@ export default () => {
   const router = useRouter();
   const path = router.pathname;
   let href, link;
-  if (path.includes("trends")) {
+  if (path.includes("quiz")) {
+    return <></>;
+  } else if (path.includes("trends")) {
     href = "/";
     link = (
       <span>
