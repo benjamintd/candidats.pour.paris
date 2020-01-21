@@ -9,8 +9,6 @@ export default ({ data }: { data: IQuiz }) => {
   const [results, setResults] = useState([]);
   const questions = Object.keys(data);
 
-  return <Results results={[["Benjamin Griveaux"]]} />;
-
   if (step <= -1) {
     return <QuizExplainer onContinue={() => setStep(0)} />;
   } else if (step < questions.length) {
