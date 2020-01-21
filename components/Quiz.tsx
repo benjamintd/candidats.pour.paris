@@ -14,8 +14,9 @@ export default ({ data }: { data: IQuiz }) => {
   } else if (step < questions.length) {
     return (
       <Question
-        step={step}
-        totalSteps={questions.length - 1}
+        step={step + 1}
+        totalSteps={questions.length}
+        theme={questions[step]}
         question={data[questions[step]]}
         onNext={result => {
           if (result) {
