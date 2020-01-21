@@ -26,7 +26,10 @@ const TrendsPage = (props: { data: IHypermind }) => (
     <div className="w-100 tc f3-l f5 pa4">
       <p>
         Ci-dessous, les prédictions d'
-        <a href="predict.hypermind.com" className="blue link underline-hover">
+        <a
+          href="https://predict.hypermind.com"
+          className="blue link underline-hover"
+        >
           hypermind
         </a>{" "}
         qui indiquent la probabilité de gagner de chacun des principaux
