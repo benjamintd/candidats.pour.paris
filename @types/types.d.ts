@@ -46,6 +46,7 @@ interface IRecord {
   Candidat: ICandidat;
   Type: IPropositionType;
   Source: string;
+  SousType: string;
 }
 
 interface ISheetData {
@@ -56,6 +57,14 @@ type IPropsHash = {
   [lvlOne: string]: {
     [lvlTwo: string]: IProposition[];
   };
+};
+
+type IQuiz = {
+  [type: string]: IQuestion;
+};
+
+type IQuestion = {
+  [proposition: string]: ICandidat[];
 };
 
 type IHypermind = Array<{
