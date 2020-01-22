@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Link from "next/link";
 import { countBy, flatten, sum, values } from "lodash";
 import candidatesInfo from "./candidatesInfo";
+import ReactGA from "react-ga";
+
 import {
   EmailShareButton,
   EmailIcon,
@@ -19,6 +21,13 @@ export default ({ results }: { results: ICandidat[][] }) => {
   const tally = countBy(flatten(results));
   const total = sum(values(tally));
   const winner = Object.keys(tally).sort((a, b) => tally[b] - tally[a])[0];
+
+  useEffect(() => {
+    ReactGA.event({
+      category: "QuizWinner",
+      action: winner
+    });
+  }, [results]);
 
   return (
     <div className="w-100 pa4 flex flex-column justify-center">
