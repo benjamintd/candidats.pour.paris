@@ -37,14 +37,15 @@ export default class Trends extends React.Component {
             { keyword: "/m/03hn76f", geo: "FR-J", time: "today 1-m" },
             { keyword: "/g/11dxf0gtll", geo: "FR-J", time: "today 1-m" },
             { keyword: "/m/0bwhj37", geo: "FR-J", time: "today 1-m" },
-            { keyword: "/m/02r53f9", geo: "FR-J", time: "today 1-m" }
+            { keyword: "/m/02r53f9", geo: "FR-J", time: "today 1-m" },
+            { keyword: "David Belliard", geo: "FR-J", time: "today 1-m" }
           ],
           category: 0,
           property: ""
         },
         {
           exploreQuery:
-            "date=today%201-m&geo=FR-J&q=%2Fm%2F03hn76f,%2Fg%2F11dxf0gtll,%2Fm%2F0bwhj37,%2Fm%2F02r53f9,%2Fg%2F11bw1h69w4",
+            "date=today%201-m&geo=FR-J&q=%2Fm%2F03hn76f,%2Fg%2F11dxf0gtll,%2Fm%2F0bwhj37,%2Fm%2F02r53f9,%2Fg%2F11bw1h69w4,David%20Belliard",
           guestPath: "https://trends.google.fr:443/trends/embed/"
         }
       );
