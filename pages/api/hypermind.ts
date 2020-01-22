@@ -5,25 +5,28 @@ const candidates: { [key: string]: ICandidat } = {
   "26548": "Rachida Dati",
   "26550": "Benjamin Griveaux",
   "26551": "Anne Hidalgo",
-  "26552": "Cédric Villani"
+  "26552": "Cédric Villani",
+  "26547": "David Belliard"
 };
 
 const order: ICandidat[] = [
   "Anne Hidalgo",
   "Benjamin Griveaux",
   "Cédric Villani",
-  "Rachida Dati"
+  "Rachida Dati",
+  "David Belliard"
 ];
 
 const colors: { [key: string]: string } = {
   "26548": "#43A047",
   "26550": "#F44336",
   "26551": "#4285f4",
-  "26552": "#FFCA28"
+  "26552": "#FFCA28",
+  "26547": "#9c27b0"
 };
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
-  const oneMonthAgo = 1576666869347; // Date.now() - 30 * 24 * 60 * 60 * 1000;
+  const oneMonthAgo = Date.now() - 30 * 24 * 60 * 60 * 1000;
   const reqData = [
     [
       "trnmt",
@@ -50,14 +53,6 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     ]
   ];
 
-  // const hmData = await fetch(
-  //   "https://predict.hypermind.com/hypermind/jsx.json",
-  //   {
-  //     method: "POST",
-  //     mode: "cors",
-  //     body: `jsx=${encodeURI(JSON.stringify(reqData))}`
-  //   }
-  // );
   const hmData = await fetch(
     "https://predict.hypermind.com/hypermind/jsx.json",
     {

@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import useKeypress from "../hooks/useKeypress";
 
 export default ({
   theme,
@@ -17,11 +16,11 @@ export default ({
   totalSteps: number;
 }) => {
   const [selected, setSelected] = useState("");
-  const enterPress = useKeypress("enter");
 
-  if (enterPress) {
+  const next = () => {
     onNext(question[selected]);
-  }
+    setSelected("");
+  };
 
   return (
     <div className="pa4">
@@ -57,7 +56,7 @@ export default ({
         <div className="gray">
           question {step}/{totalSteps}
         </div>
-        <button className="w4 h2 f6" onClick={() => onNext(question[selected])}>
+        <button className="w4 h2 f6" onClick={() => next()}>
           {selected ? "Suivant" : "Passer"}
         </button>
       </div>

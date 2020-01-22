@@ -26,8 +26,8 @@ export default () => {
     href = "/trends";
     link = (
       <span>
-        Explorez aussi l'évolution de l'intérêt des recherches Google pour les
-        principaux candidats ➡️
+        Explorez aussi l'évolution des tendances pour les principaux candidats
+        ➡️
       </span>
     );
   }
