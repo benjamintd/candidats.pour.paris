@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { shuffle } from "lodash";
+import React, { useState, useEffect } from "react";
+import ReactGA from "react-ga";
 import QuizExplainer from "./QuizExplainer";
 import Question from "./Question";
 import Results from "./Results";
@@ -7,6 +7,27 @@ import Results from "./Results";
 export default ({ data }: { data: IQuiz }) => {
   const [step, setStep] = useState(-1);
   const [results, setResults] = useState([]);
+
+  useEffect(() => {
+    ReactGA.event({
+      category: "QuizPage",
+      action: "Page",
+      value: step
+    });
+  }, [step]);
+
+  const onNext = result => {
+    if (result) {
+      setResults([...results, result]);
+    }
+    setStep(step + 1);
+  };
+
+  const onPrevious = () => {
+    setResults(results.slice(0, results.length - 1));
+    setStep(step - 1);
+  };
+
   const questions = Object.keys(data);
 
   if (step <= -1) {
@@ -18,16 +39,8 @@ export default ({ data }: { data: IQuiz }) => {
         totalSteps={questions.length}
         theme={questions[step]}
         question={data[questions[step]]}
-        onNext={result => {
-          if (result) {
-            setResults([...results, result]);
-          }
-          setStep(step + 1);
-        }}
-        onPrevious={() => {
-          setResults(results.slice(0, results.length - 1));
-          setStep(step - 1);
-        }}
+        onNext={onNext}
+        onPrevious={onPrevious}
       />
     );
   } else {

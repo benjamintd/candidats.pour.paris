@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import ReactGA from "react-ga";
 
 export default ({
   theme,
@@ -19,6 +20,10 @@ export default ({
 
   const next = () => {
     onNext(question[selected]);
+    ReactGA.event({
+      category: "QuizAnswer",
+      action: selected
+    });
     setSelected("");
   };
 
