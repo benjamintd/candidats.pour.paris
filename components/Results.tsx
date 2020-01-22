@@ -35,6 +35,15 @@ export default ({ results }: { results: ICandidat[][] }) => {
           </Link>
           .
         </p>
+        <div className="w-100 flex justify-center">
+          <div className="w4-l h4-l w3 h3 flex items-center ">
+            <img
+              className="br-100 ba bw2 b--light-gray"
+              src={candidatesInfo[winner].image}
+              alt={winner}
+            />
+          </div>
+        </div>
         <p className="f4">
           Retrouvez toutes ses propositions et celles des autres candidats{" "}
           <Link href="/">

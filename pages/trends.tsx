@@ -53,7 +53,7 @@ const TrendsPage = (props: { data: IHypermind }) => (
 );
 
 TrendsPage.getInitialProps = async ctx => {
-  const res = await fetch("http://localhost:3000/api/hypermind");
+  const res = await fetch("https://candidats.pour.paris/api/hypermind");
   const data = await res.json();
   return { data };
 };
