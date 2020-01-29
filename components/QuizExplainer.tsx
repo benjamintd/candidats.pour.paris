@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "./Button";
 
 export default ({ onContinue }: { onContinue: () => void }) => (
   <div className="pa4 tc">
@@ -10,6 +11,6 @@ export default ({ onContinue }: { onContinue: () => void }) => (
       Vous pourrez voir à quel candidat vos convictions correspondent le mieux.
       Quoi qu'il en soit, n'oubliez pas de voter le 15 mars prochain !
     </p>
-    <button onClick={onContinue}>Commencer</button>
+    <Button onClick={onContinue}>Commencer</Button>
   </div>
 );

@@ -1,5 +1,6 @@
 import React from "react";
 import { useLocalStorage } from "@rehooks/local-storage";
+import Button from "./Button";
 
 export default () => {
   const [cookieConsent, setCookieConsent] = useLocalStorage("cookie-consent");
@@ -13,7 +14,7 @@ export default () => {
           utilisé.
         </div>
         <div className="ml-auto">
-          <button onClick={() => setCookieConsent("true")}>OK</button>
+          <Button onClick={() => setCookieConsent("true")}>OK</Button>
         </div>
       </div>
     );

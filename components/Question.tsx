@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ReactGA from "react-ga";
 import { flatten } from "lodash";
+import Button from "./Button";
 
 export default ({
   theme,
@@ -62,15 +63,15 @@ export default ({
         ))}
       </div>
       <div className="flex items-center justify-between">
-        <button className="w4 h2 f6" onClick={onPrevious}>
+        <Button className="w4 h2" onClick={onPrevious}>
           Précédent
-        </button>
-        <div className="gray">
+        </Button>
+        <div className="gray tc">
           question {step}/{totalSteps}
         </div>
-        <button className="w4 h2 f6" onClick={() => next()}>
+        <Button className="w4 h2" onClick={() => next()}>
           {selected ? "Suivant" : "Passer"}
-        </button>
+        </Button>
       </div>
       <style jsx>{`
         .selected {

@@ -6,7 +6,7 @@ export default ({ fill }: { fill: string } = { fill: "#000" }) => (
     target="_blank"
     rel="noreferrer"
   >
-    <div className="w1 h1 pointer dib">
+    <div className="w2-l h2-l w1 h1 pointer dib ma1">
       <svg
         height="100%"
         width="100%"

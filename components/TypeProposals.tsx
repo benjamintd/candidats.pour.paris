@@ -35,7 +35,7 @@ export default ({ proposals, type }: IProps) => {
                     </a>
                   </Link>
                 </div>
-                <ul className="mv2 w-75-l w-100-m lh-copy">
+                <ul className="mb2 w-75-l w-100-m lh-copy">
                   {proposals[candidate].map((proposal, i) => (
                     <ListItem key={i} source={proposal.source}>
                       {proposal.text}
