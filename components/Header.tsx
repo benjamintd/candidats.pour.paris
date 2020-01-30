@@ -1,5 +1,6 @@
 import React from "react";
 import Github from "./Github";
+import Twitter from "./Twitter";
 import Logo from "./Logo";
 
 export default () => (
@@ -15,6 +16,7 @@ export default () => (
       </span>
       <div className="ml-auto-l ml-auto-m">
         <Github fill="#001B44" />
+        <Twitter fill="#001B44" />
       </div>
     </div>
     <style jsx>{`
