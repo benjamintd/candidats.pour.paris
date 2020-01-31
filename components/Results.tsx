@@ -141,16 +141,20 @@ const CandidateResults = ({
       </Link>
     </td>
     <td className="pa0 relative h2">
-      <div className="br2 h2 w-100">
+      <div className="br2 h2 w-100 flex items-center">
         <div
-          className="h-100 tr white-80 f5 flex items- justify-end pa2 br2"
+          className="h-100 tr white-80 f5 flex justify-end pa2 br2"
           style={{
             backgroundColor: candidatesInfo[candidate].color,
             width: `${100 * proportion}%`
           }}
+        />
+        <span
+          className="pl2"
+          style={{ color: candidatesInfo[candidate].color }}
         >
           {(100 * proportion).toFixed(0)}&nbsp;%
-        </div>
+        </span>
       </div>
     </td>
     <style jsx>{`
