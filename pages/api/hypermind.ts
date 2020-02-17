@@ -3,7 +3,7 @@ import fetch from "isomorphic-unfetch";
 
 const candidates: { [key: string]: ICandidat } = {
   "26548": "Rachida Dati",
-  "26550": "Agnès Buzyn",
+  "26553": "Agnès Buzyn",
   "26551": "Anne Hidalgo",
   "26552": "Cédric Villani",
   "26547": "David Belliard"
@@ -19,7 +19,7 @@ const order: ICandidat[] = [
 
 const colors: { [key: string]: string } = {
   "26548": "#43A047",
-  "26550": "#F44336",
+  "26553": "#F44336",
   "26551": "#4285f4",
   "26552": "#FFCA28",
   "26547": "#9c27b0"
