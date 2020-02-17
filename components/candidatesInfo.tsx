@@ -31,8 +31,8 @@ const candidatesInfo: ICandidatesInfo = {
     bio: "",
     color: "#1226aa"
   },
-  "Benjamin Griveaux": {
-    image: "/benjamin-griveaux.jpg",
+  "Agnès Buzyn": {
+    image: "/agnes-buzyn.png",
     movement: "Paris ensemble",
     party: "La République En Marche",
     website: "https://ensemble.paris/",

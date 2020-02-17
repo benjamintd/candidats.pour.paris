@@ -3,7 +3,7 @@ import fetch from "isomorphic-unfetch";
 
 const candidates: { [key: string]: ICandidat } = {
   "26548": "Rachida Dati",
-  "26550": "Benjamin Griveaux",
+  "26550": "Agnès Buzyn",
   "26551": "Anne Hidalgo",
   "26552": "Cédric Villani",
   "26547": "David Belliard"
@@ -11,7 +11,7 @@ const candidates: { [key: string]: ICandidat } = {
 
 const order: ICandidat[] = [
   "Anne Hidalgo",
-  "Benjamin Griveaux",
+  "Agnès Buzyn",
   "Cédric Villani",
   "Rachida Dati",
   "David Belliard"

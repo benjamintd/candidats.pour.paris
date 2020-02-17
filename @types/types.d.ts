@@ -3,7 +3,7 @@ type ICandidat =
   | "David Belliard"
   | "Anne Hidalgo"
   | "Cédric Villani"
-  | "Benjamin Griveaux"
+  | "Agnès Buzyn"
   | "Rachida Dati"
   | "Serge Federbusch"
   | "Marcel Campion"
