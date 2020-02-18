@@ -32,7 +32,7 @@ const candidatesInfo: ICandidatesInfo = {
     color: "#1226aa"
   },
   "Agnès Buzyn": {
-    image: "/agnes-buzyn.png",
+    image: "/agnes-buzyn.jpg",
     movement: "Paris ensemble",
     party: "La République En Marche",
     website: "https://ensemble.paris/",
