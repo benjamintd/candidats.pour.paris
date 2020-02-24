@@ -12,8 +12,10 @@ const Candidates = (props: ISheetData) => {
   return (
     <>
       <Explainer />
-      <Filter filter={"candidate"} />
-      <TableByCandidate proposalsByCandidate={proposalsByCandidate} />
+      <div className="mw8 center">
+        <Filter filter={"candidate"} />
+        <TableByCandidate proposalsByCandidate={proposalsByCandidate} />
+      </div>
     </>
   );
 };

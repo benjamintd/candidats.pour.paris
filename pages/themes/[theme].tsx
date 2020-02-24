@@ -16,17 +16,19 @@ const Themes = (props: ISheetData) => {
   return (
     <>
       <Explainer />
-      <div className="flex justify-between w-100">
-        <Filter filter={"type"} />
-        <Defilter href="/themes">afficher tous les thèmes</Defilter>
+      <div className="mw8 center">
+        <div className="flex justify-between w-100">
+          <Filter filter={"type"} />
+          <Defilter href="/themes">afficher tous les thèmes</Defilter>
+        </div>
+        {proposalsByType[theme] && (
+          <TableByTheme
+            proposalsByType={{
+              [theme]: proposalsByType[theme]
+            }}
+          />
+        )}
       </div>
-      {proposalsByType[theme] && (
-        <TableByTheme
-          proposalsByType={{
-            [theme]: proposalsByType[theme]
-          }}
-        />
-      )}
     </>
   );
 };

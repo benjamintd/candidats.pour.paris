@@ -2,6 +2,9 @@ import React from "react";
 import CandidateInfo from "./CandidateInfo";
 import ListItem from "./ListItem";
 import Link from "next/link";
+import { darken } from "polished";
+
+import candidatesInfo from "./candidatesInfo";
 
 interface IProps {
   proposals: {
@@ -12,7 +15,7 @@ interface IProps {
 
 export default ({ proposals, candidate }: IProps) => {
   return (
-    <div className="br3 bg-light-gray mb4 center shadow-3">
+    <div className="br2 bg-white mb4 center shadow-3">
       <CandidateInfo candidate={candidate} />
       <div className="pa3">
         {Object.keys(proposals)
@@ -25,7 +28,14 @@ export default ({ proposals, candidate }: IProps) => {
                     href="/themes/[theme]"
                     as={"/themes/" + encodeURI(type)}
                   >
-                    <a className="mv2 f4 black link underline-hover">{type}</a>
+                    <a
+                      style={{
+                        color: darken(0.2, candidatesInfo[candidate].color)
+                      }}
+                      className="mv2 f4 b link underline-hover"
+                    >
+                      {type}
+                    </a>
                   </Link>
                 </div>
                 <ul className="mv2 w-75-l w-100-m lh-copy">

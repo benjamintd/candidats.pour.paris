@@ -33,7 +33,7 @@ export default () => {
       />
       <meta name="og:type" property="og:type" content="website" />
       <link
-        href="https://fonts.googleapis.com/css?family=Bree+Serif|Fira+Sans:300,400&display=swap"
+        href="https://fonts.googleapis.com/css?family=Bree+Serif|Fira+Sans:300,400,700&display=swap"
         rel="stylesheet"
       />
       <link href="/favicon.png" rel="icon" />
