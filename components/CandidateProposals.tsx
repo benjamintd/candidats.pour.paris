@@ -22,7 +22,10 @@ export default ({ proposals, candidate }: IProps) => {
           .sort((a, b) => a.localeCompare(b))
           .map(type => {
             return (
-              <div key={type} className="flex-l flex-column-m pb2">
+              <div
+                key={type}
+                className="flex-l flex-column-m pv3 bb b--near-white"
+              >
                 <div className="w-25-l w-100-m">
                   <Link
                     href="/themes/[theme]"
@@ -38,7 +41,7 @@ export default ({ proposals, candidate }: IProps) => {
                     </a>
                   </Link>
                 </div>
-                <ul className="mv2 w-75-l w-100-m lh-copy">
+                <ul className="mv0 w-75-l w-100-m lh-copy">
                   {proposals[type].map((proposal, i) => (
                     <ListItem key={i} source={proposal.source}>
                       {proposal.text}
