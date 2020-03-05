@@ -8,7 +8,7 @@ export default ({ filter }: { filter: IFilter }) => {
       <Link href="/candidats">
         <span
           className={
-            "br3 pv1 ph2 shadow-3 pointer dim" +
+            "br2 pv1 ph2 shadow-3 pointer dim" +
             (filter === "candidate" ? " fw9 highlight" : "")
           }
         >
@@ -18,7 +18,7 @@ export default ({ filter }: { filter: IFilter }) => {
       <Link href="/themes">
         <span
           className={
-            "br3 pv1 ph2 shadow-3 pointer dim" +
+            "br2 pv1 ph2 shadow-3 pointer dim" +
             (filter === "type" ? " fw9 highlight" : "")
           }
         >

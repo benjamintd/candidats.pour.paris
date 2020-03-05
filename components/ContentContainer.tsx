@@ -1,5 +1,7 @@
 import React from "react";
 
 export default ({ children }) => (
-  <div className="mw8 center flex-auto">{children}</div>
+  <div className="w-100 min-vh-100" style={{ backgroundColor: "#FAFAFA" }}>
+    {children}
+  </div>
 );

@@ -6,7 +6,7 @@ interface IProps {
 }
 
 export default ({ children, source }: IProps) => (
-  <li className="pb2">
+  <li className="pb2" style={{ listStyleType: "circle" }}>
     {children}
     <sup>
       <a className="link underline-hover gray" href={source}>

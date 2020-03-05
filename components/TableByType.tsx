@@ -11,7 +11,7 @@ export interface ITableProps {
 
 export default ({ proposalsByType }: ITableProps) => {
   return (
-    <div className="w-100 flex-column items-center pa3">
+    <div className="w-100 mw8 flex-column items-center pa3">
       {Object.keys(proposalsByType)
         .sort((a, b) => a.localeCompare(b))
         .map(type => (

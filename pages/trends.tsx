@@ -9,7 +9,7 @@ const Hypermind = dynamic(() => import("../components/Hypermind"), {
 });
 
 const TrendsPage = (props: { data: IHypermind }) => (
-  <>
+  <div className="mw8 center">
     <div className="w-100 tc f3-l f5 pa4">
       <p>
         Voici l'évolution des statistiques de recherche Google pour les
@@ -49,7 +49,7 @@ const TrendsPage = (props: { data: IHypermind }) => (
       </p>
     </div>
     <Hypermind data={props.data} />
-  </>
+  </div>
 );
 
 TrendsPage.getInitialProps = async ctx => {

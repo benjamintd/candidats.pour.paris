@@ -13,8 +13,8 @@ interface IProps {
 
 export default ({ proposals, type }: IProps) => {
   return (
-    <div className="br3 bg-light-gray mb4 center shadow-3">
-      <div className="bg-dark-blue pa2 f5 fw3 white tc br3 br--top">
+    <div className="br2 bg-white mb4 center shadow-3">
+      <div className="bg-dark-blue pa2 f5 fw3 white tc br2 br--top">
         <Link href="/themes/[theme]" as={"/themes/" + encodeURI(type)}>
           <h1 className="pointer link underline-hover">{type}</h1>
         </Link>

@@ -16,17 +16,19 @@ const Candidates = (props: ISheetData) => {
   return (
     <>
       <Explainer />
-      <div className="flex justify-between w-100">
-        <Filter filter={"candidate"} />
-        <Defilter href="/candidats">afficher tous les candidats</Defilter>
+      <div className="mw8 center">
+        <div className="flex justify-between w-100">
+          <Filter filter={"candidate"} />
+          <Defilter href="/candidats">afficher tous les candidats</Defilter>
+        </div>
+        {proposalsByCandidate[candidat] && (
+          <TableByCandidate
+            proposalsByCandidate={{
+              [candidat]: proposalsByCandidate[candidat]
+            }}
+          />
+        )}
       </div>
-      {proposalsByCandidate[candidat] && (
-        <TableByCandidate
-          proposalsByCandidate={{
-            [candidat]: proposalsByCandidate[candidat]
-          }}
-        />
-      )}
     </>
   );
 };
