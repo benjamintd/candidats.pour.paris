@@ -11,7 +11,7 @@
     "@rehooks/local-storage": "^2.1.1",
     "d3": "^5.15.0",
     "isomorphic-unfetch": "^3.0.0",
-    "lodash": "^4.17.19",
+    "lodash": "^4.17.21",
     "next": "^9.2.0",
     "next-ga": "^2.3.4",
     "nprogress": "^0.2.0",
